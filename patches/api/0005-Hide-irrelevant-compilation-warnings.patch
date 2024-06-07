@@ -5,10 +5,10 @@ Subject: [PATCH] Hide irrelevant compilation warnings
 
 
 diff --git a/build.gradle.kts b/build.gradle.kts
-index bf01892c248b988531d21d9fb0f74d0adf2205ac..e2e11d760f497713f100f9b564f2fc898993c57d 100644
+index fd39ed209b20c927054b8482c400beeeeab460a3..d83f2d45849411afd91e27721f73189ed2a8bca5 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
-@@ -109,6 +109,15 @@ val generateApiVersioningFile by tasks.registering {
+@@ -130,6 +130,15 @@ val generateApiVersioningFile by tasks.registering {
      }
  }
  
@@ -24,7 +24,7 @@ index bf01892c248b988531d21d9fb0f74d0adf2205ac..e2e11d760f497713f100f9b564f2fc89
  tasks.jar {
      from(generateApiVersioningFile.map { it.outputs.files.singleFile }) {
          into("META-INF/maven/${project.group}/${project.name}")
-@@ -166,6 +175,8 @@ tasks.withType<Javadoc> {
+@@ -187,6 +196,8 @@ tasks.withType<Javadoc> {
              into("build/docs/javadoc")
          }
      }
